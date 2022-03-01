@@ -1,0 +1,13 @@
+<div class="teams-container">
+  <div class="title-row">
+    <h1> {{ title }}</h1>
+    <button class="back-button" (click)="back()">
+      <img src="../../assets/left-arrow.png" height="40px" />
+    </button>
+  </div>
+  <div class="teams-list">
+    <button mat-raised-button *ngFor="let team of teams" (click)="openTeam(team)">
+      <teams-item [team]="team"></teams-item>
+    </button>
+  </div>
+</div>

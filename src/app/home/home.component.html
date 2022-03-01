@@ -1,0 +1,22 @@
+<div class="home-bg">
+  <div [@formCard]="animationState" class="card">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Season</mat-label>
+        <input matInput formControlName="season" type="number" >
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!form.valid"
+      >
+      <img src="assets/search.png" height="25px" width="25px" />
+      </button>
+    </form>
+  </div>
+  <div *ngIf="competitions?.length" class="list">
+    <button *ngFor="let competition of competitions" mat-raised-button (click)="showCompetition(competition)">
+      <competition-item [competition]="competition" ></competition-item>
+    </button>
+  </div>
+</div>

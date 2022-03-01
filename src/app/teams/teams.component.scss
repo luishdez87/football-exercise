@@ -1,0 +1,30 @@
+.teams-container {
+  padding: 20px;
+  height: calc(100vh - 40px);
+  overflow-y: scroll;
+}
+
+.teams-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.title-row {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.back-button {
+  cursor: pointer;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  :active {
+    transform: scale(.8);
+  }
+}

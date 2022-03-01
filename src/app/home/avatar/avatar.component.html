@@ -1,0 +1,8 @@
+<div *ngIf="competition">
+  <div class="avatar-container" *ngIf="competition?.emblemUrl; else initials">
+    <img [src]="competition?.emblemUrl" width="100%" height="100%" />
+  </div>
+  <ng-template #initials>
+    <div class="initials-container"> {{ getInitials(competition.name) }} </div>
+  </ng-template>
+</div>
